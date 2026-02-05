@@ -3,14 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>To-Do List</title>
 
-    link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
+
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>To-Do List - Tengku Mirza RZ</h1>
     
-    <main></main>
+    <main>
+        <section>
+            <form id="todo-form">
+            <!-- Todo Input -->
+            <input
+            type="text"
+            class="border rounded p-2 box-border"
+            id="todo-input"
+            placeholder="Enter a new todo item"
+            required
+                >
+
+            <!-- Date Input -->
+            <input
+            class="border rounded p-2 box-border"
+            type="date"
+            id="todo-date"
+            required
+                >
+
+            <!-- Add Button -->
+            <button type="submit">Add Todo</button>
+            </form>
+        </section>
+        
+
+    </main>
 
     <footer></footer>
 

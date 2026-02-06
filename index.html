@@ -7,42 +7,85 @@
     <title>To-Do List</title>
 
     <link rel="stylesheet" href="css/style.css"> 
-
 </head>
-<body>
-    <header>
-        <h1>To-Do List - Tengku Mirza RZ</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-10 font-sans">
+
+    <header class="mb-8 text-center">
+        <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight">To-Do List</h1>
+        <p class="text-gray-500 mt-2">Tengku Mirza RZ Mini Project</p>
+    </header>
     
-    <main>
-        <section>
-            <form id="todo-form">
-            <!-- Todo Input -->
-            <input
-            type="text"
-            class="border rounded p-2 box-border"
-            id="todo-input"
-            placeholder="Enter a new todo item"
-            required
+    <main class="w-full max-w-3xl bg-blue-600 p-8 rounded-2xl shadow-2xl">
+        
+        <section class="mb-8">
+            <form id="todo-form" class="flex flex-col md:flex-row gap-4">
+                <input
+                    type="text"
+                    id="todo-input"
+                    class="bg-white border-none rounded-lg p-3 flex-grow focus:outline-none focus:ring-4 focus:ring-blue-300 text-gray-900 placeholder-gray-500 shadow-sm"
+                    placeholder="What needs to be done?"
+                    required
                 >
 
-            <!-- Date Input -->
-            <input
-            class="border rounded p-2 box-border"
-            type="date"
-            id="todo-date"
-            required
+                <input
+                    type="date"
+                    id="todo-date"
+                    class="bg-white border-none rounded-lg p-3 focus:outline-none focus:ring-4 focus:ring-blue-300 text-gray-900 shadow-sm cursor-pointer"
+                    required
                 >
 
-            <!-- Add Button -->
-            <button type="submit">Add Todo</button>
+                <button 
+                    type="submit" 
+                    class="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition shadow-md active:scale-95 uppercase tracking-wide"
+                >
+                    Add Task
+                </button>
             </form>
         </section>
+
+        <section class="flex justify-between items-center mb-6 p-4 bg-blue-700/50 rounded-lg border border-blue-500/30">
+            <select id="filter-todo" class="bg-white border-none rounded-lg p-2 text-gray-900 cursor-pointer focus:ring-2 focus:ring-blue-300 font-medium">
+                <option value="all">Show: All Tasks</option>
+                <option value="completed">Show: Completed</option>
+                <option value="pending">Show: Pending</option>
+            </select>
+
+            <button 
+                id="delete-all" 
+                class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-red-600 transition shadow-sm"
+            >
+                DELETE ALL
+            </button>
+        </section>
         
+        <section class="overflow-hidden rounded-lg shadow-lg">
+            <table class="w-full border-collapse text-left">
+                <thead>
+                    <tr class="bg-blue-800 text-white uppercase text-xs font-semibold tracking-wider border-b border-blue-700">
+                        <th class="p-4">Task Description</th>
+                        <th class="p-4">Due Date</th>
+                        <th class="p-4">Status</th>
+                        <th class="p-4 text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-list" class="bg-blue-600/10">
+                    </tbody>
+            </table>
+            
+            <div id="empty-msg" class="text-center p-8 text-blue-100 hidden flex flex-col items-center bg-blue-700/30 rounded-b-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                <p>No tasks yet. Please Add A Task!</p>
+            </div>
+        </section>
 
     </main>
 
-    <footer></footer>
+    <footer class="mt-8 text-gray-500 text-sm">
+        &copy; 2026 Mini Project By Tengku Mirza RZ
+    </footer>
 
-    <script src=""></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
